@@ -63,8 +63,8 @@ export default function App() {
 
       setAuthState({
         isSignedIn: !!user,
-        userName: user?.name || null,
-        userId: user?.id || null,
+        userName: user?.username || null,
+        userId: user?.uuid || null,
       });
       return !!user;
     }  catch {
