@@ -11,8 +11,8 @@ import { createProject } from "../../lib/puter.action";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Roomify" },
+    { name: "description", content: "Roomify helps you visualize and render architectural projects faster with AI." },
   ];
 }
 
@@ -39,7 +39,7 @@ export default function Home() {
       return false;
     }
 
-    setProjects((prev) => [newItem, ...prev]);
+    setProjects((prev) => [saved, ...prev]);
 
     navigate(`/visualiser/${newId}`, {
       state:{
@@ -63,7 +63,7 @@ export default function Home() {
       </div>    
       <h1>Build beautiful spaces at the speed of thought with Roomify</h1>
 
-      <p className="subtitle"> Roomify is an AI-first design enviroment that helps you visualise, render, and ship architechtural projects faster than ever</p>
+      <p className="subtitle">Roomify is an AI-first design environment that helps you visualize, render, and ship architectural projects faster than ever.</p>
       <div className="actions">
         <a href="#upload" className="cta">
           Start Building <ArrowRight className="icon" />
@@ -104,7 +104,7 @@ export default function Home() {
 
         <div className="projects-grid">
           {projects.map(({id, name, renderedImage, sourceImage,timestamp}) =>(
-             <div className="project-card group">
+             <div key={id} className="project-card group">
             <div className="preview">
               <img src={renderedImage || sourceImage} />
               <div className="badge">
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
 
             <div className="card-body"> 
-              <h3>[name]</h3>
+              <h3>{name}</h3>
 
               <div className="meta">
                 <Clock size={12}/>
@@ -122,7 +122,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="Arrow">
+            <div className="arrow">
               <ArrowUpRight size={18} />
             </div>
 

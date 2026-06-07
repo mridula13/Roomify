@@ -1,5 +1,4 @@
 import { Box } from "lucide-react";
-import type { Log } from "mongodb";
 import Button  from "./ui/Button";
 import { useOutletContext } from "react-router";
 
@@ -27,7 +26,7 @@ const Navbar = () => {
             <div className="left">
                 <div className="brand">
                     <Box className="logo"/>
-                    <span className="mame">
+                    <span className="name">
                         Roomify
                     </span>
                 </div>
