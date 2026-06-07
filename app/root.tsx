@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 
+import type { ReactNode } from "react";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { UserRoundIcon } from "lucide-react";
